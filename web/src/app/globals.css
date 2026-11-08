@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ========================================================
+   HUBD4U - CINEMATIC STREAMING DESIGN SYSTEM
+   Theme: Deep Slate / Cinema Black (#090A0E)
+   Accents: Pure White, Precision Sky (#38BDF8), Warm Amber (#F59E0B)
+   Zero AI Slop: No gratuitous gradients, no excessive glow, no emoji chips
+   ======================================================== */
+
+:root {
+  /* Surfaces */
+  --cinema-canvas: #090a0e;
+  --cinema-surface: #12141c;
+  --cinema-card: #171a24;
+  --cinema-elevated: #1e2230;
+  
+  /* Borders */
+  --cinema-border: rgba(255, 255, 255, 0.08);
+  --cinema-border-hover: rgba(255, 255, 255, 0.2);
+  --cinema-border-active: #38bdf8;
+  
+  /* Typography */
+  --cinema-text-primary: #ffffff;
+  --cinema-text-secondary: #94a3b8;
+  --cinema-text-muted: #64748b;
+  
+  /* Accents */
+  --cinema-accent: #38bdf8;
+  --cinema-accent-hover: #0ea5e9;
+  --cinema-amber: #f59e0b;
+  --cinema-rose: #f43f5e;
+}
+
+@theme inline {
+  --color-background: var(--cinema-canvas);
+  --color-foreground: var(--cinema-text-primary);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #090a0e;
+}
+
+body {
+  background-color: #090a0e;
+  color: #ffffff;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Cinema Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Utility to hide scrollbar for smooth carousel rails */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Accessible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* Crisp Cinema Image Vignettes */
+.cinema-vignette-bottom {
+  background: linear-gradient(180deg, transparent 0%, rgba(9, 10, 14, 0.8) 70%, #090a0e 100%);
+}
+
+.cinema-vignette-left {
+  background: linear-gradient(90deg, #090a0e 0%, rgba(9, 10, 14, 0.75) 45%, transparent 100%);
+}

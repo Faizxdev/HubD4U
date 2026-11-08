@@ -1,0 +1,62 @@
+{
+  "functions": {
+    "src/app/api/transcode/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/transcode/test/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/stream-fallback/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/stream-fallback/test/route.ts": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/transcode/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        },
+        {
+          "key": "X-Accel-Buffering",
+          "value": "no"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/api/stream-fallback/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        },
+        {
+          "key": "X-Accel-Buffering",
+          "value": "no"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/transcode",
+      "destination": "/api/transcode"
+    },
+    {
+      "source": "/api/stream-fallback",
+      "destination": "/api/stream-fallback"
+    }
+  ]
+}
