@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback, memo } from 'react';
 import Link from 'next/link';
+import { triggerAdClick } from './adUtils';
 
 interface HeroItem {
   title: string;
@@ -324,6 +325,7 @@ function HeroSlider({ provider }: { provider: string }) {
           <div className="flex items-center gap-3 pt-1">
             <Link
               href={infoHref}
+              onClick={() => triggerAdClick()}
               className="bg-white text-black hover:bg-slate-200 active:scale-95 font-bold px-6 py-2.5 sm:px-7 sm:py-3 rounded-lg flex items-center gap-2 shadow-lg transition-all text-sm tracking-wide"
             >
               <PlayIcon />

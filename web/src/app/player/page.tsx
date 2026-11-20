@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Hls from 'hls.js';
 import Banner728x90 from '../ui/Banner728x90';
 import NativeBanner from '../ui/NativeBanner';
+import { triggerAdClick } from '../ui/adUtils';
 
 // Extend HTMLVideoElement to include audioTracks (not in standard TypeScript types)
 declare global {
@@ -2350,6 +2351,7 @@ function PlayerContent() {
                       <button
                         key={i}
                         onClick={() => {
+                          triggerAdClick();
                           setIsBlackScreenDetected(false);
                           setCurrentIndex(i);
                         }}
@@ -2413,6 +2415,7 @@ function PlayerContent() {
                       <button
                         key={epIdx}
                         onClick={() => {
+                          triggerAdClick();
                           window.location.href = `/player?${epParams.toString()}`;
                         }}
                         className={`p-3 rounded-xl border transition-all text-center group flex flex-col justify-center min-h-[58px] ${

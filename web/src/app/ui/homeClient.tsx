@@ -7,6 +7,7 @@ import GenreSection from './GenreSection';
 import Row from './Row';
 import Banner728x90 from './Banner728x90';
 import NativeBanner from './NativeBanner';
+import { triggerAdClick } from './adUtils';
 
 interface Section {
   title: string;
@@ -256,6 +257,7 @@ export default function HomeClient() {
                 <Link
                   key={item.link}
                   href={playUrl}
+                  onClick={() => triggerAdClick()}
                   className="group relative flex-shrink-0 w-[180px] sm:w-[220px] rounded-lg overflow-hidden bg-[#12141c] border border-white/10 hover:border-white/30 transition-all"
                 >
                   <div className="relative aspect-video bg-[#171a24] overflow-hidden">

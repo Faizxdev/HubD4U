@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import NativeBanner from '../ui/NativeBanner';
+import { triggerAdClick } from '../ui/adUtils';
 
 interface OMDBData {
   title: string;
@@ -226,6 +227,7 @@ function InfoContent() {
 
   // 5. Fast Direct Download & Stream Fetcher
   const fetchDownloadLinks = async (itemLink: string, itemTitle: string) => {
+    triggerAdClick();
     setDownloadModal({ show: true, link: itemLink, title: itemTitle });
     setDownloadLoading(true);
     setDownloadLinks([]);
@@ -289,6 +291,7 @@ function InfoContent() {
   };
 
   const triggerDirectDownload = (directUrl: string) => {
+    triggerAdClick(true);
     window.open(directUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -475,6 +478,7 @@ function InfoContent() {
               {firstPlayUrl ? (
                 <Link
                   href={firstPlayUrl}
+                  onClick={() => triggerAdClick()}
                   className="bg-white text-black hover:bg-slate-200 active:scale-95 font-bold px-7 py-3 rounded-lg flex items-center gap-2 shadow-xl transition-all text-sm tracking-wide"
                 >
                   <PlayIcon />
@@ -604,6 +608,7 @@ function InfoContent() {
                             >
                               <Link
                                 href={playUrl}
+                                onClick={() => triggerAdClick()}
                                 className="flex items-center gap-3 min-w-0 flex-1 group"
                               >
                                 <div className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-white group-hover:text-black flex items-center justify-center text-white transition-all">
@@ -668,7 +673,7 @@ function InfoContent() {
                                     key={epIdx}
                                     className="p-2.5 rounded-lg bg-[#171a24] border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between group"
                                   >
-                                    <Link href={epPlayUrl} className="block mb-2">
+                                    <Link href={epPlayUrl} onClick={() => triggerAdClick()} className="block mb-2">
                                       <div className="text-xs font-semibold text-white group-hover:text-[#38bdf8] truncate">
                                         {ep.title}
                                       </div>

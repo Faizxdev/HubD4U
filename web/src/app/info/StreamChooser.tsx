@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { triggerAdClick } from "../ui/adUtils";
 
 export default function StreamChooser({
   provider,
@@ -76,6 +77,7 @@ export default function StreamChooser({
   };
 
   const downloadFile = (stream: any) => {
+    triggerAdClick(true);
     const proxyUrl = `/api/proxy?url=${encodeURIComponent(stream.link)}${
       stream.headers?.Referer
         ? `&referer=${encodeURIComponent(stream.headers.Referer)}`
@@ -113,6 +115,7 @@ export default function StreamChooser({
             {/* Play Button */}
             <a
               href={`/player?provider=${encodeURIComponent(provider)}&type=${encodeURIComponent(s.type || "movie")}&link=${encodeURIComponent(s.link)}`}
+              onClick={() => triggerAdClick()}
               className="text-xs bg-white text-black rounded-l px-2 py-1 hover:bg-gray-200 transition-colors"
             >
               {s.server || s.type || `Stream ${i + 1}`}

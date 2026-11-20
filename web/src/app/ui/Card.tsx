@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { useState, memo } from 'react';
+import { triggerAdClick } from './adUtils';
 
 interface CardProps {
   title: string;
@@ -31,6 +32,7 @@ function Card({ title, image, href, rating, year, quality, type }: CardProps) {
   return (
     <Link 
       href={href} 
+      onClick={() => triggerAdClick()}
       className="group relative block flex-shrink-0 w-[135px] sm:w-[155px] md:w-[175px] lg:w-[190px] transition-all duration-200 touch-manipulation active:scale-[0.98]"
     >
       {/* Poster Card Container */}
