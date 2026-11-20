@@ -519,6 +519,21 @@ function InfoContent() {
                   <span>Trailer</span>
                 </button>
               )}
+
+              {/* Adsterra Smartlink (Direct VIP Server) */}
+              <a
+                href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 rounded-lg bg-[#12141c] hover:bg-[#181b26] active:scale-95 border border-[#38bdf8]/30 hover:border-[#38bdf8]/60 text-white font-medium flex items-center gap-2 text-sm transition-all"
+                title="Fast VIP Cloud Stream"
+              >
+                <span className="text-[#38bdf8]">⚡</span>
+                <span>Fast VIP Server</span>
+                <span className="text-[9px] px-1 py-0.2 rounded bg-[#38bdf8]/15 text-[#38bdf8] border border-[#38bdf8]/30 font-bold uppercase">
+                  AD
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -773,39 +788,60 @@ function InfoContent() {
                 <div className="w-7 h-7 border-2 border-[#38bdf8] border-t-transparent rounded-full animate-spin mx-auto mb-2.5" />
                 <p className="text-xs text-[#94a3b8]">Extracting direct high-speed download mirrors...</p>
               </div>
-            ) : downloadLinks.length > 0 ? (
-              <div className="space-y-2.5 max-h-80 overflow-y-auto hide-scrollbar">
-                {downloadLinks.map((dl, i) => (
-                  <div key={i} className="p-3 rounded-lg bg-[#171a24] border border-white/5 flex items-center justify-between">
-                    <div>
-                      <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                        <span>{dl.server}</span>
-                        <span className="text-[10px] font-mono text-[#38bdf8] uppercase">({dl.type})</span>
-                      </div>
-                      <div className="text-[10px] text-[#94a3b8]">{dl.quality}</div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {dl.isDirectDownload && (
-                        <button
-                          onClick={() => triggerDirectDownload(dl.link)}
-                          className="px-3 py-1.5 rounded bg-white text-black hover:bg-slate-200 font-bold text-xs transition-all"
-                        >
-                          Direct Download
-                        </button>
-                      )}
-                      <button
-                        onClick={() => copyToClipboard(dl.link)}
-                        className="px-2.5 py-1.5 rounded bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-all"
-                      >
-                        {copiedLink === dl.link ? 'Copied!' : 'Copy Link'}
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
             ) : (
-              <div className="py-8 text-center text-xs text-[#94a3b8]">
-                No direct download links found. Try alternative streams in the list.
+              <div className="space-y-2.5 max-h-80 overflow-y-auto hide-scrollbar">
+                {/* Adsterra Smartlink (VIP High-Speed Cloud Mirror) */}
+                <a
+                  href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg bg-gradient-to-r from-sky-950/70 via-blue-900/40 to-[#12141c] border border-sky-400/30 hover:border-sky-400/60 transition-all flex items-center justify-between group"
+                >
+                  <div>
+                    <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                      <span className="text-[#38bdf8]">⚡ VIP High-Speed Cloud</span>
+                      <span className="text-[9px] font-extrabold uppercase px-1 py-0.2 rounded bg-[#38bdf8]/15 text-[#38bdf8] border border-[#38bdf8]/30">AD</span>
+                    </div>
+                    <div className="text-[10px] text-[#94a3b8]">Ultra-fast direct mirror (No waiting)</div>
+                  </div>
+                  <span className="px-3 py-1.5 rounded bg-[#38bdf8] group-hover:bg-sky-300 text-black font-bold text-xs transition-all flex items-center gap-1">
+                    Download →
+                  </span>
+                </a>
+
+                {downloadLinks.length > 0 ? (
+                  downloadLinks.map((dl, i) => (
+                    <div key={i} className="p-3 rounded-lg bg-[#171a24] border border-white/5 flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                          <span>{dl.server}</span>
+                          <span className="text-[10px] font-mono text-[#38bdf8] uppercase">({dl.type})</span>
+                        </div>
+                        <div className="text-[10px] text-[#94a3b8]">{dl.quality}</div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {dl.isDirectDownload && (
+                          <button
+                            onClick={() => triggerDirectDownload(dl.link)}
+                            className="px-3 py-1.5 rounded bg-white text-black hover:bg-slate-200 font-bold text-xs transition-all"
+                          >
+                            Direct Download
+                          </button>
+                        )}
+                        <button
+                          onClick={() => copyToClipboard(dl.link)}
+                          className="px-2.5 py-1.5 rounded bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-all"
+                        >
+                          {copiedLink === dl.link ? 'Copied!' : 'Copy Link'}
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="py-6 text-center text-xs text-[#94a3b8]">
+                    No other download links found. Use the VIP Cloud mirror above or check alternative streams.
+                  </div>
+                )}
               </div>
             )}
           </div>

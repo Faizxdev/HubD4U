@@ -43,6 +43,20 @@ export default function Footer() {
               <li>
                 <Link href="/providers" className="hover:text-white transition-colors">Streaming Sources</Link>
               </li>
+              <li>
+                <a
+                  href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#38bdf8] hover:text-sky-300 transition-colors flex items-center gap-1.5 font-medium"
+                  title="Direct High-Speed Cloud Server"
+                >
+                  <span>⚡ Fast VIP Cloud</span>
+                  <span className="text-[9px] px-1 py-0.2 rounded bg-[#38bdf8]/15 text-[#38bdf8] border border-[#38bdf8]/30 font-bold uppercase">
+                    Ad
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 

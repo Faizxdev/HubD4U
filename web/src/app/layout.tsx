@@ -38,6 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
+      <head>
+        {/* Adsterra Popunder */}
+        <script
+          data-cfasync="false"
+          src="https://aarems.org/1/472a2c6ba55f6f6c90f1e78f27fd434f"
+        />
+      </head>
       <body suppressHydrationWarning className={`${inter.variable} font-sans antialiased bg-[#090a0e] text-white selection:bg-[#38bdf8] selection:text-black min-h-screen`}>
         {/* Desktop Left-Rail Navigation */}
         <HotstarSidebar />
@@ -53,6 +60,12 @@ export default function RootLayout({
         {/* Mobile Bottom Navigation */}
         <BottomNav />
         <Analytics />
+
+        {/* Adsterra Social Bar */}
+        <script
+          data-cfasync="false"
+          src="https://bancadeltempoidea.org/14/8bf38e5719fa8cb0287a48473e99f9fa"
+        />
       </body>
     </html>
   );
