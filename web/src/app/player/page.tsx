@@ -2,6 +2,8 @@
 import { useEffect, useMemo, useRef, useState, Suspense, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Hls from 'hls.js';
+import Banner728x90 from '../ui/Banner728x90';
+import NativeBanner from '../ui/NativeBanner';
 
 // Extend HTMLVideoElement to include audioTracks (not in standard TypeScript types)
 declare global {
@@ -2322,6 +2324,9 @@ function PlayerContent() {
               </div>
             </div>
 
+            {/* Adsterra 728x90 Banner */}
+            {!isFullscreen && <Banner728x90 />}
+
             {/* Available Server Sources */}
             {streams.length > 0 && (
               <div className="bg-[#12151c] border border-white/10 rounded-2xl p-4 sm:p-6 shadow-xl">
@@ -2428,6 +2433,9 @@ function PlayerContent() {
                 </div>
               </div>
             )}
+
+            {/* Adsterra Native 4:1 Banner Widget */}
+            {!isFullscreen && <NativeBanner />}
           </div>
         </div>
       )}

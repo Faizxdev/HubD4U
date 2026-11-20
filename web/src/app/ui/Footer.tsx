@@ -45,7 +45,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                  href="https://asiafilm.org/4/a771342c35642ef4a403b79f54efa159"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#38bdf8] hover:text-sky-300 transition-colors flex items-center gap-1.5 font-medium"

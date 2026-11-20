@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import NativeBanner from '../ui/NativeBanner';
 
 interface OMDBData {
   title: string;
@@ -522,7 +523,7 @@ function InfoContent() {
 
               {/* Adsterra Smartlink (Direct VIP Server) */}
               <a
-                href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                href="https://asiafilm.org/4/a771342c35642ef4a403b79f54efa159"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-3 rounded-lg bg-[#12141c] hover:bg-[#181b26] active:scale-95 border border-[#38bdf8]/30 hover:border-[#38bdf8]/60 text-white font-medium flex items-center gap-2 text-sm transition-all"
@@ -736,6 +737,9 @@ function InfoContent() {
         )}
       </div>
 
+      {/* Adsterra Native Banner (4:1 Widget) */}
+      <NativeBanner />
+
       {/* Trailer Modal */}
       {showTrailerModal && activeTrailer && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
@@ -792,7 +796,7 @@ function InfoContent() {
               <div className="space-y-2.5 max-h-80 overflow-y-auto hide-scrollbar">
                 {/* Adsterra Smartlink (VIP High-Speed Cloud Mirror) */}
                 <a
-                  href="https://directyp.org/4/46b59acb808cd2d5eec167d6af87323e"
+                  href="https://asiafilm.org/4/a771342c35642ef4a403b79f54efa159"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gradient-to-r from-sky-950/70 via-blue-900/40 to-[#12141c] border border-sky-400/30 hover:border-sky-400/60 transition-all flex items-center justify-between group"

@@ -5,6 +5,8 @@ import HeroSlider from './HeroSlider';
 import TopProviderSelector from './TopProviderSelector';
 import GenreSection from './GenreSection';
 import Row from './Row';
+import Banner728x90 from './Banner728x90';
+import NativeBanner from './NativeBanner';
 
 interface Section {
   title: string;
@@ -328,6 +330,10 @@ export default function HomeClient() {
         )}
 
         {/* Top Rows */}
+        {!loading && !error && (
+          <Banner728x90 />
+        )}
+
         {!loading && !error && sections.slice(0, 2).map((section, index) => (
           <div key={`${section.title}-${index}`} id={`category-${section.filter}`}>
             <Row
@@ -342,6 +348,11 @@ export default function HomeClient() {
         {/* Genres Showcase Section */}
         {!loading && !error && genres.length > 0 && (
           <GenreSection genres={genres} provider={provider} />
+        )}
+
+        {/* Native 4:1 Adsterra Banner Widget */}
+        {!loading && !error && (
+          <NativeBanner />
         )}
 
         {/* Remaining Rows */}
